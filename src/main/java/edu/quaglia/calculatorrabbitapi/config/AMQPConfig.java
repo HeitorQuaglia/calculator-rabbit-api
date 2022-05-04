@@ -1,5 +1,6 @@
 package edu.quaglia.calculatorrabbitapi.config;
 
+import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.AsyncRabbitTemplate;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -16,6 +17,10 @@ public class AMQPConfig {
         return new Queue("expression.response");
     }
 
+    @Bean
+    public DirectExchange responseExchange() {
+        return new DirectExchange("expression.response");
+    }
     @Bean
     public AsyncRabbitTemplate asyncRabbitTemplate(RabbitTemplate rabbitTemplate){
         return new AsyncRabbitTemplate(rabbitTemplate);
