@@ -1,0 +1,4 @@
+rootProject.name = 'calculator-rabbit-api'
+
+include ':calculator-rabbit-model'
+project(':calculator-rabbit-model').projectDir = new File('../calculator-rabbit-model')
