@@ -28,7 +28,7 @@ public class CalculatorController {
         this.rabbitMQClient = rabbitMQClient;
     }
 
-    @GetMapping("/add")
+    @GetMapping("/sum")
     public ResponseEntity<?> add(@RequestParam(name = "a") BigDecimal a, @RequestParam(name = "b") BigDecimal b) {
         LOGGER.info("Received a {} and b {} for addition", a, b);
 
@@ -37,7 +37,7 @@ public class CalculatorController {
         return new ResponseEntity<>(resultDto, HttpStatus.OK);
     }
 
-    @GetMapping("/subtract")
+    @GetMapping("/sub")
     public ResponseEntity<?> subtract(@RequestParam(name = "a") BigDecimal a, @RequestParam(name = "b") BigDecimal b) {
         LOGGER.info("Received a {} and b {} for subtract", a, b);
 
@@ -46,7 +46,7 @@ public class CalculatorController {
         return new ResponseEntity<>(resultDto, HttpStatus.OK);
     }
 
-    @GetMapping("/multiply")
+    @GetMapping("/mpy")
     public ResponseEntity<?> multiply(@RequestParam(name = "a") BigDecimal a, @RequestParam(name = "b") BigDecimal b) {
         LOGGER.info("Received a {} and b {} for multiply", a, b);
 
@@ -55,7 +55,7 @@ public class CalculatorController {
         return new ResponseEntity<>(resultDto, HttpStatus.OK);
     }
 
-    @GetMapping("/divide")
+    @GetMapping("/div")
     public ResponseEntity<?> divide(@RequestParam(name = "a") BigDecimal a, @RequestParam(name = "b") BigDecimal b) {
         LOGGER.info("Received a {} and b {} for divide", a, b);
 
